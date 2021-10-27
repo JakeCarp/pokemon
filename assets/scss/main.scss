@@ -15,5 +15,24 @@ main {
   flex-grow: 1;
 }
 
+.left-hand{
+  border: black, solid, 2px;
+  min-width: 40vh;
+  height: 45vh;
+  overflow-y: scroll;
+}
+.left-hand::-webkit-scrollbar{
+  color: #dc3b3b;
+  border-radius: 50%;
+}
+.left-hand::-webkit-scrollbar-track{
+  border-radius: 10px;
+}
+
+
+.right-hand{
+  min-width: 60vh;
+  min-height: 75vh;
+}
 
 
