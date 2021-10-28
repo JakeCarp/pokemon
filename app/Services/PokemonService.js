@@ -13,10 +13,12 @@ class PokemonService {
     }
 
     async setActive(name) {
-        const res = await pokeApi.get('/pokemon' + name)
+        const res = await pokeApi.get('pokemon/' + name)
         console.log(res.data)
-        const text = await pokeApi.get('/pokemon-species/' + res.data.results.id)
-        let pokemon = new PokeApiPokemon(res.data.results, text)
+        const textsrc = await pokeApi.get('/pokemon-species/' + res.data.id)
+        console.log(textsrc)
+        const text = textsrc.data.flavor_text_entries[0].flavor_text
+        let pokemon = new PokeApiPokemon(res.data, text)
         ProxyState.activePokemon = pokemon
     }
 }

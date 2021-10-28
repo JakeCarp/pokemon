@@ -2,10 +2,11 @@ export class PokeApiPokemon {
     constructor(data, text = '') {
         this.name = data.name
         this.id = data.id || ''
+        this.img = data.img || data.sprites.default_font
         this.height = data.height || 0
         this.weight = data.weight || 0
         this.types = data.types || []
-        this.desc = text
+        this.text = text
     }
 
     get Template() {
